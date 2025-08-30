@@ -1,0 +1,18 @@
+:root{
+  --primary-color: #ffffff;
+  --secondary-color: #00e0ff;
+  --secondary-text : #cdd6f4;
+
+  background:linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+

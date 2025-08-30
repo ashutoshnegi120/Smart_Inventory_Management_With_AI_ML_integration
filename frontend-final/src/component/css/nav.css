@@ -1,0 +1,71 @@
+.nav {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 15%;
+    height: 0.4%;
+    padding: 0.1rem 0.1rem;
+    margin-bottom: 0.5rem;
+
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+}
+
+.nav:hover {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: max-content;
+    padding: 2rem 1rem;
+}
+
+/* Icon wrappers */
+.nav .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease-in-out;
+    padding: 10px;
+}
+
+/* Reveal icons on hover */
+.nav:hover .container {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes hoverIcon {
+    0% {
+        background: transparent;
+        border-radius: 4px;
+    }
+    50% {
+        background: slategrey;
+        border-radius: 25px;
+    }
+    100% {
+        border-radius: 35px;
+    }
+}
+
+.container:hover {
+    animation: hoverIcon 1s ease-in-out forwards;
+    background: slategrey;
+    border-radius: 35px;
+    opacity: 1;
+}

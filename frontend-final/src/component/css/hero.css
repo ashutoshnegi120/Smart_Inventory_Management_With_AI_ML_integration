@@ -1,0 +1,173 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    overflow-x: hidden;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Hero Section */
+.hero-section {
+    background: #1e293b; /* Dark but soft */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 1.5rem;
+    overflow-x: hidden;
+}
+
+/* Hero Content Container */
+.hero-content {
+    display: flex;
+    max-width: 1300px;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4rem;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+/* Left Section: Text */
+.hero-left {
+    flex: 1;
+    min-width: 300px;
+}
+
+.hero-left h1 {
+    font-size: 3.5rem;
+    color: #f1f5f9;
+    margin-bottom: 1.2rem;
+    line-height: 1.2;
+}
+
+.hero-left p {
+    font-size: 1.25rem;
+    color: #cbd5e1;
+    margin-bottom: 2rem;
+}
+
+/* Buttons */
+.hero-buttons {
+    display: flex;
+    gap: 1.2rem;
+    margin-bottom: 1.8rem;
+    flex-wrap: wrap;
+}
+
+.primary-btn {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    color: #fff;
+    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3);
+}
+
+/* Gradient border button with animation */
+.gradient-border-btn {
+    position: relative;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    color: #fff;
+    background: #1e293b;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 0;
+    transition: color 0.3s ease;
+}
+
+.gradient-border-btn::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+    z-index: -1;
+    border-radius: 10px;
+    opacity: 0.7;
+    animation: pulse 3s infinite;
+}
+
+.gradient-border-btn::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background: #1e293b;
+    z-index: -1;
+    border-radius: 6px;
+}
+
+/* Subtext */
+.hero-subtext {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+/* Right Section: Image */
+.hero-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+}
+
+.hero-right img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Tiny animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+}
+
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .hero-left h1 {
+        font-size: 2.25rem;
+    }
+
+    .hero-left p {
+        font-size: 1.05rem;
+    }
+
+    .primary-btn, .gradient-border-btn {
+        width: 100%;
+        text-align: center;
+    }
+}

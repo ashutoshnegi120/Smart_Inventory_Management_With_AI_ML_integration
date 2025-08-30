@@ -22,18 +22,55 @@ An enterprise-grade smart inventory management platform that combines real-time 
 
 ```mermaid
 graph TB
-    Frontend[React TypeScript Frontend] --> Gateway[Rust API Gateway]
-    Gateway --> Analytics[Python Analytics Service]
-    Gateway --> GenAI[Python GenAI Service]
-    Gateway --> ML[ML Training Pipeline]
-    
-    Analytics --> PostgreSQL[(PostgreSQL)]
-    GenAI --> Vector[(Vector DB)]
-    ML --> Redis[(Redis Streams)]
-    Gateway --> MongoDB[(MongoDB)]
-    
-    ML --> Models[Trained Models]
-    Vector --> LLM[Together AI LLM]
+    %% FRONTEND
+    Frontend[React TypeScript Frontend]
+
+    %% GATEWAY
+    Gateway[Rust API Gateway]
+
+    %% SERVICES
+    subgraph Services
+        Analytics[Python Analytics Service]
+        GenAI[Python GenAI Service]
+        ML[ML Training Pipeline]
+    end
+
+    %% DATABASES
+    subgraph Databases
+        PostgreSQL[(PostgreSQL)]
+        MongoDB[(MongoDB)]
+        Redis[(Redis / Hash Map & Streams)]
+        Vector[(Vector DB)]
+    end
+
+    %% MODELS
+    subgraph AI_Models
+        Models[Trained Models]
+        LLM[Together AI LLM]
+    end
+
+    %% CONNECTIONS
+    Frontend --> Gateway
+
+    Gateway --> Analytics
+    Gateway --> GenAI
+    Gateway --> ML
+    Gateway --> PostgreSQL
+    Gateway --> MongoDB
+    Gateway --> Models
+
+    Analytics --> PostgreSQL
+    Analytics --> Redis
+
+    GenAI --> Vector
+    GenAI --> PostgreSQL
+    GenAI --> MongoDB
+
+    ML --> Redis
+    ML --> Models
+
+    Vector --> LLM
+
 ```
 
 ### 🛠️ Technology Stack

@@ -351,7 +351,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📧 Contact
 
-**[Ashutosh negi]** - [ashutoshnegisgrr@example.com]
+**[Ashutosh negi]** - [ashutoshnegisgrr@gmail.com]
 
 **LinkedIn:** [https://www.linkedin.com/in/ashutosh-negi-UK07/]()
 
